@@ -123,6 +123,11 @@ namespace itfantasy.igui
             return UI<ILabel, itfantasy.igui.u.Label, itfantasy.igui.n.Label>(go, type);
         }
 
+        public static IImage Image(GameObject go, UIType type = UIType.NONE)
+        {
+            return UI<IImage, itfantasy.igui.u.Image, itfantasy.igui.n.Image>(go, type);
+        }
+
         #region custom extends ...
 
         private static Dictionary<Type, Type[]> _customDicts = new Dictionary<Type, Type[]>();
