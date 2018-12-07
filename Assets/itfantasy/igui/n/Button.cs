@@ -47,13 +47,5 @@ namespace itfantasy.igui.n
             }
         }
 
-        public void SetClick(System.Action<GameObject> onClick)
-        {
-            UIEventListener.Get(this.gameObject).onClick = (go) =>
-            {
-                onClick.Invoke(go);
-            };
-        }
-
     }
 }

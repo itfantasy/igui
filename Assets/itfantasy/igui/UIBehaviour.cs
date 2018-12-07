@@ -201,6 +201,27 @@ namespace itfantasy.igui
             this.OnInitUI();
         }
 
+        public virtual void SetClick(System.Action<GameObject> onClick)
+        {
+            //UIClickListener.Get(this.gameObject).onClick = onClick;
+
+            switch(this._uiType)
+            {
+                case UIType.UGUI:
+                    EventTriggerListener.Get(this.gameObject).onClick = (go) =>
+                    {
+                        onClick.Invoke(go);
+                    };
+                    break;
+                case UIType.NGUI:
+                    UIEventListener.Get(this.gameObject).onClick = (go) =>
+                    {
+                        onClick.Invoke(go);
+                    };
+                    break;
+            }
+        }
+
         protected virtual void OnInitUI()
         {
 
