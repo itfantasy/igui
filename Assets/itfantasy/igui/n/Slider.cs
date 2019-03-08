@@ -5,25 +5,25 @@ using itfantasy.igui;
 
 namespace itfantasy.igui.n
 {
-    public class Label : UIBehaviour, ILabel
+    public class Slider : UIBehaviour, ISlider
     {
-        UILabel _label;
+        UISlider _slider;
 
         protected override void OnInitUI()
         {
-            _label = this.GetComponent<UILabel>();
+            _slider = this.GetComponent<UISlider>();
             base.OnInitUI();
         }
 
-        public string text
+        public float value
         {
             get
             {
-                return _label.text;
+                return _slider.value;
             }
             set
             {
-                _label.text = value;
+                _slider.value = value;
             }
         }
     }

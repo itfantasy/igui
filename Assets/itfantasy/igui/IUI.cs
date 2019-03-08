@@ -32,8 +32,11 @@ namespace itfantasy.igui
 
         float rotationZ { get; set; }
 
-        MonoBehaviour mono { get; }
+        MonoBehaviour monoBehaviour { get; }
 
+        T GetComponent<T>();
+
+        GameObject gameObject { get; }
 
     }
 }

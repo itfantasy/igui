@@ -12,12 +12,10 @@ namespace itfantasy.igui.n
         BoxCollider _boxCollider;
         UILabel _label;
 
-        Component[] components;
-
         protected override void OnInitUI()
         {
             _button = this.GetComponent<UIButton>();
-            _label = this.GetComponentInChildren<UILabel>();
+            _label = this.transform.Find("Label").GetComponentInChildren<UILabel>();
             _boxCollider = this.GetComponent<BoxCollider>();
             base.OnInitUI();
         }

@@ -5,25 +5,24 @@ using itfantasy.igui;
 
 namespace itfantasy.igui.n
 {
-    public class Label : UIBehaviour, ILabel
+    public class Input : UIBehaviour, IInput
     {
-        UILabel _label;
+        UIInput _input;
 
         protected override void OnInitUI()
         {
-            _label = this.GetComponent<UILabel>();
-            base.OnInitUI();
+            _input = this.GetComponent<UIInput>();
         }
 
         public string text
         {
             get
             {
-                return _label.text;
+                return _input.value;
             }
             set
             {
-                _label.text = value;
+                _input.value = value;
             }
         }
     }

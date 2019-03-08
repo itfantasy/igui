@@ -177,7 +177,7 @@ namespace itfantasy.igui
             }
         }
 
-        public MonoBehaviour mono
+        public MonoBehaviour monoBehaviour
         {
             get
             {
@@ -203,23 +203,25 @@ namespace itfantasy.igui
 
         public virtual void SetClick(System.Action<GameObject> onClick)
         {
-            //UIClickListener.Get(this.gameObject).onClick = onClick;
+            UIClickListener.Get(this.gameObject).onClick = onClick;
 
-            switch(this._uiType)
-            {
-                case UIType.UGUI:
-                    EventTriggerListener.Get(this.gameObject).onClick = (go) =>
-                    {
-                        onClick.Invoke(go);
-                    };
-                    break;
-                case UIType.NGUI:
-                    UIEventListener.Get(this.gameObject).onClick = (go) =>
-                    {
-                        onClick.Invoke(go);
-                    };
-                    break;
-            }
+            #region etc....
+            //switch(this._uiType)
+            //{
+            //    case UIType.UGUI:
+            //        EventTriggerListener.Get(this.gameObject).onClick = (go) =>
+            //        {
+            //            onClick.Invoke(go);
+            //        };
+            //        break;
+            //    case UIType.NGUI:
+            //        UIEventListener.Get(this.gameObject).onClick = (go) =>
+            //        {
+            //            onClick.Invoke(go);
+            //        };
+            //        break;
+            //}
+            #endregion
         }
 
         protected virtual void OnInitUI()

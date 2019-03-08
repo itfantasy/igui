@@ -1,30 +1,32 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using itfantasy.igui;
 
-namespace itfantasy.igui.n
+namespace itfantasy.igui.u
 {
-    public class Label : UIBehaviour, ILabel
+    public class Input : UIBehaviour, IInput
     {
-        UILabel _label;
+        InputField _input;
 
         protected override void OnInitUI()
         {
-            _label = this.GetComponent<UILabel>();
-            base.OnInitUI();
+            _input = this.GetComponent<InputField>();
         }
 
         public string text
         {
             get
             {
-                return _label.text;
+                return _input.text;
             }
             set
             {
-                _label.text = value;
+                _input.text = value;
             }
         }
+
+        
     }
 }

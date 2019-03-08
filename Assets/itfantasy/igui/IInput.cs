@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 namespace itfantasy.igui
 {
-    public interface IProgressBar : IUI
+    public interface IInput : IUI
     {
-        float value { get; set; }
+        string text { get; set; }
+
     }
 }

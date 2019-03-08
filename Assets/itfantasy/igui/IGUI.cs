@@ -128,6 +128,21 @@ namespace itfantasy.igui
             return UI<IImage, itfantasy.igui.u.Image, itfantasy.igui.n.Image>(go, type);
         }
 
+        public static IInput Input(GameObject go, UIType type = UIType.NONE)
+        {
+            return UI<IInput, itfantasy.igui.u.Input, itfantasy.igui.n.Input>(go, type);
+        }
+
+        public static IProgressBar ProgressBar(GameObject go, UIType type = UIType.NONE)
+        {
+            return UI<IProgressBar, itfantasy.igui.u.ProgressBar, itfantasy.igui.n.ProgressBar>(go, type);
+        }
+
+        public static ISlider Slider(GameObject go, UIType type = UIType.NONE)
+        {
+            return UI<ISlider, itfantasy.igui.u.Slider, itfantasy.igui.n.Slider>(go, type);
+        }
+
         #region custom extends ...
 
         private static Dictionary<Type, Type[]> _customDicts = new Dictionary<Type, Type[]>();

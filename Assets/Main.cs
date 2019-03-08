@@ -15,8 +15,17 @@ public class Main : MonoBehaviour {
     ILabel uLabel;
     ILabel nLabel;
 
+    ISlider uSlider;
+    ISlider nSlider;
+
     IImage uImage;
     IImage nImage;
+
+    IInput uInput;
+    IInput nInput;
+
+    IProgressBar uProgressBar;
+    IProgressBar nProgressBar;
 
 	// Use this for initialization
 	void Start () {
@@ -35,8 +44,17 @@ public class Main : MonoBehaviour {
         uLabel = IGUI.Label(GameObject.Find("URoot/Label"), UIType.UGUI);
         nLabel = IGUI.Label(GameObject.Find("NRoot/Label"), UIType.NGUI);
 
+        uSlider = IGUI.Slider(GameObject.Find("URoot/Slider"), UIType.UGUI);
+        nSlider = IGUI.Slider(GameObject.Find("NRoot/Slider"), UIType.NGUI);
+
         uImage = IGUI.Image(GameObject.Find("URoot/Image"), UIType.UGUI);
         nImage = IGUI.Image(GameObject.Find("NRoot/Image"), UIType.NGUI);
+
+        uInput = IGUI.Input(GameObject.Find("URoot/Input"), UIType.UGUI);
+        nInput = IGUI.Input(GameObject.Find("NRoot/Input"), UIType.NGUI);
+
+        uProgressBar = IGUI.ProgressBar(GameObject.Find("URoot/ProgressBar"), UIType.UGUI);
+        nProgressBar = IGUI.ProgressBar(GameObject.Find("NRoot/ProgressBar"), UIType.NGUI);
     }
 
     Texture texture1 = null;
@@ -56,11 +74,20 @@ public class Main : MonoBehaviour {
         uLabel.text = "Fantasy!";
         nLabel.text = "Fantasy!";
 
+        uSlider.value = 0.5f;
+        nSlider.value = 0.5f;
+
         uImage.texture = texture2;
         nImage.texture = texture1;
 
         uImage.alpha = 0.5f;
         nImage.alpha = 0.5f;
+
+        uInput.text = "i'm UGUI";
+        nInput.text = "i'm NGUI";
+
+        uProgressBar.value = 0.6f;
+        nProgressBar.value = 0.6f;
     }
 	
 	void OnClick(GameObject go)

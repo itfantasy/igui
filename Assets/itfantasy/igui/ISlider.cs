@@ -2,7 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public interface ISlider {
+namespace itfantasy.igui
+{
+    public interface ISlider : IUI
+    {
+        float value { get; set; }
 
-	
+    }
 }

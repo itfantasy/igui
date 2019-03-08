@@ -1,29 +1,32 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using itfantasy.igui;
 
-namespace itfantasy.igui.n
+using USlider = UnityEngine.UI.Slider;
+
+namespace itfantasy.igui.u
 {
-    public class Label : UIBehaviour, ILabel
+    public class Slider : UIBehaviour, ISlider
     {
-        UILabel _label;
+        USlider _slider;
 
         protected override void OnInitUI()
         {
-            _label = this.GetComponent<UILabel>();
+            _slider = this.GetComponent<USlider>();
             base.OnInitUI();
         }
 
-        public string text
+        public float value
         {
             get
             {
-                return _label.text;
+                return _slider.value;
             }
             set
             {
-                _label.text = value;
+                _slider.value = value;
             }
         }
     }
